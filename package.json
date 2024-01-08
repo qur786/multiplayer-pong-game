@@ -4,7 +4,8 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./src/server.js",
+    "start": "cross-env NODE_ENV=production node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
     "pretty": "prettier --write ./src"
   },
   "dependencies": {
@@ -13,6 +14,7 @@
     "socket.io": "^4.7.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^3.0.2",
     "prettier": "^3.1.1"
   }

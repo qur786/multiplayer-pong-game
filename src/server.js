@@ -5,6 +5,8 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import { getLatestRoomID } from "./utils.js";
 
+const PORT = NODE_ENV === "production" ? process.env.PORT : 3000;
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
@@ -76,6 +78,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
+server.listen(PORT, () => {
   console.log("Server is listening on port 3000.");
 });
