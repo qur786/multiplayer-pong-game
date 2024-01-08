@@ -5,7 +5,7 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import { getLatestRoomID } from "./utils.js";
 
-const PORT = NODE_ENV === "production" ? process.env.PORT : 3000;
+const PORT = process.env.NODE_ENV === "production" ? process.env.PORT : 3000;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
