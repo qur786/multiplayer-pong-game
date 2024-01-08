@@ -4,6 +4,8 @@ This is a Node.js application that hosts a multiplayer Pong game using Express.j
 
 **Play the game here:** [Multiroom Pong Game](https://multiroom-pong-game.onrender.com/)
 
+❤ Please give it a start if you liked it.
+
 Please note that the project has been deployed in a free tier of a service. Due to resource limitations, players may encounter some delay or lags while playing the game.
 
 ## Technologies Used
