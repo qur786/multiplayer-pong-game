@@ -26,8 +26,6 @@ function getLatestRoomID() {
 }
 
 io.on("connection", (socket) => {
-  console.log(`A new user has connect with ID: ${socket.id}`);
-
   socket.on("play", async (playerID) => {
     const roomID = getLatestRoomID();
     socket.join(roomID);
