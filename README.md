@@ -1,6 +1,10 @@
-# Multiroom Pong Game
+# Multiplayer Pong Game
 
 This is a Node.js application that hosts a multiplayer Pong game using Express.js and Socket.io. Players can compete in different game rooms, interacting in real-time through the server.
+
+**Play the game here:** [Multiroom Pong Game](https://multiroom-pong-game.onrender.com/)
+
+Please note that the project has been deployed in a free tier of a service. Due to resource limitations, players may encounter some delay or lags while playing the game.
 
 ## Technologies Used
 
@@ -24,7 +28,7 @@ This is a Node.js application that hosts a multiplayer Pong game using Express.j
 
 ## Project Structure
 
-- **`/src/public`:** Contains frontend files (EJS, CSS, and JS) for the game interface.
+- **`/public`:** Contains frontend files (EJS, CSS, and JS) for the game interface.
 - **`/src`:** Server-side code, including Socket.io logic and game room management.
 
 ## How It Works
