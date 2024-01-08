@@ -1,0 +1,18 @@
+{
+  "name": "socket-pong",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "nodemon ./src/server.js",
+    "pretty": "prettier --write ./src"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1"
+  }
+}
