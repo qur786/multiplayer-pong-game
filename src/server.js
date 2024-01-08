@@ -13,10 +13,12 @@ const io = new Server(server);
 
 const socketToRoomMap = new Map();
 
+app.set("view engine", "ejs");
+app.set("views", join(__dirname, "public"));
 app.use("/", express.static(join(__dirname, "public")));
 
 app.get("/", (_req, res) => {
-  res.sendFile(join(__dirname, "public", "index.html"));
+  res.render("index.ejs");
 });
 
 let playerCount = 0;
