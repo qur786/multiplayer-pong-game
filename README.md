@@ -1,4 +1,4 @@
-# Multiplayer Pong Game
+# Multiroom Pong Game
 
 This is a Node.js application that hosts a multiplayer Pong game using Express.js and Socket.io. Players can compete in different game rooms, interacting in real-time through the server.
 
