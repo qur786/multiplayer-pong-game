@@ -254,7 +254,12 @@ function animate() {
   if (isRefree) {
     ballMove();
     ballBoundaries();
-    socket.emit("ball-move", [ball.x, ball.y, player1Score, player2Score]);
+    socket.emit("ball-move", {
+      x: ball.x,
+      y: ball.y,
+      score1: player1Score,
+      score2: player2Score,
+    });
   }
   if (isGameOver !== true) {
     window.requestAnimationFrame(animate);
@@ -320,7 +325,7 @@ socket.on("paddle-move", ({ topX, bottomX }) => {
   paddle.bottomX = bottomX;
 });
 
-socket.on("ball-move", ([x, y, score1, score2]) => {
+socket.on("ball-move", ({ x, y, score1, score2 }) => {
   ball.x = x;
   ball.y = y;
   player1Score = score1;
