@@ -3,6 +3,7 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { createServer } from "http";
 import { Server } from "socket.io";
+import { getLatestRoomID } from "./utils.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -20,20 +21,15 @@ app.get("/", (_req, res) => {
 
 let playerCount = 0;
 
-function getLatestRoomID() {
-  const room = Math.floor(playerCount / 2);
-  return room.toString();
-}
-
 io.on("connection", (socket) => {
   socket.on("play", async (playerID) => {
-    const roomID = getLatestRoomID();
+    const roomID = getLatestRoomID(playerCount);
     socket.join(roomID);
     socketToRoomMap.set(playerID, roomID);
     if ((await io.in(roomID).fetchSockets()).length === 2) {
       io.to(roomID).emit("start", playerID);
     }
-    playerCount++;
+    playerCount += 1;
   });
 
   socket.on("game-over", (playerID) => {
